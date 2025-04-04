@@ -1,14 +1,33 @@
-# Zadanie (3 pkt)
 
-Twoim zadaniem jest zaimplementowanie mechanizmu, który pozwoli na porównywanie ze sobą obiektów klas `Person` oraz `Address`
+# 🧠 Zadanie: Porównywanie obiektów
 
-**Dwa obiekty uznajemy za takie same gdy:**
-- wszystkie wartości pól w obiektach są takie same
-- jeżeli pole jest referencją do innego obiektu lub kolekcji obiektów (klasa `Person` będzie miała referencję do `ArrayListy` obiektów klasy `Address`) to
-  * wartości pól w referencjach także powinny być równe (tj. pola w poszczególnych adresach)
+Twoim celem jest zaimplementowanie mechanizmu, który umożliwia **porównywanie obiektów klas `Person` oraz `Address`**.
 
-**W przeciwnym przypadku obiekty są różne.**
+---
 
-Aby rozwiązać to zadanie należy nadpisać metody `equals` `hashCode`  `toString`, które klasa dziedziczy po klasie `Object`
+## 🔎 Kiedy obiekty uznajemy za równe?
 
-Warto wykorzystać klasę `StringBuilder` w implementacji metody `toString`
+Dwa obiekty są **takie same**, gdy:
+- wszystkie **wartości pól** są identyczne,
+- jeżeli pole jest **referencją** (np. do innego obiektu lub kolekcji obiektów),
+  - to również **wszystkie pola tych referencji muszą być równe**.
+
+> Przykład: Obiekt `Person` zawiera listę adresów (`ArrayList<Address>`). W takim przypadku należy sprawdzić, czy wszystkie pola w każdym `Address` są również równe.
+
+W każdym innym przypadku obiekty powinny być uznane za **różne**.
+
+---
+
+## 🛠️ Wymagania techniczne
+
+Aby prawidłowo rozwiązać zadanie, należy **nadpisać** poniższe metody dziedziczone z klasy `Object`:
+
+- `equals(Object other)`  
+- `hashCode()`  
+- `toString()`
+
+---
+
+## 🧾 Wskazówka
+
+Podczas implementacji metody `toString()` warto użyć klasy `StringBuilder` — pozwala ona wydajnie tworzyć złożone reprezentacje tekstowe obiektów.
